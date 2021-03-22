@@ -78,9 +78,9 @@ export class Hotel
 
         let elInput;
 
-        let podaci = ["Ime:", "Prezime:", "E-mail:", "Datum prijave:", "Broj dana:", "Broj odraslih:", "Broj dece:"];
-        let imenaKlasa = ["ime","prezime","email","datumPrijave", "brDana", "brOdraslih", "brDece"];
-        let tipovi = ["text", "text", "text", "date", "number", "number", "number"];
+        let podaci = ["Ime:", "Prezime:", "E-mail:", "Broj dana:", "Broj odraslih:", "Broj dece:"];
+        let imenaKlasa = ["ime","prezime","email", "brDana", "brOdraslih", "brDece"];
+        let tipovi = ["text", "text", "text", "number", "number", "number"];
         podaci.forEach((el, ind) =>
         {
             elLabela = document.createElement("label");
@@ -138,8 +138,10 @@ export class Hotel
 
             let brojSobe = parseInt(izbor.value);
 
-            console.log(this.sobe[brojSobe-1]);
-            if(this.sobe[brojSobe-1].zauzeta == true)
+            //console.log(this.sobe[brojSobe-1]);
+            if (ime == "" || prezime == "")
+                alert("Potrebno je uneti ime i prezime gosta!");
+            else if(this.sobe[brojSobe-1].zauzeta == true)
                 alert("Soba je vec zauzeta! Molimo Vas izaberite drugu sobu!");
             else if(this.sobe[brojSobe-1].brojKreveta < ukupanBrOsoba)
                 alert("Broj kreveta ne odgovara broju osoba!");
@@ -198,7 +200,7 @@ export class Hotel
             else if(this.racuni[brojSobe-1].placenRacun == false)
             {
                 alert("Morate izmiriti dugovanja!");
-                console.log(this.racuni[brojSobe-1]);
+                //console.log(this.racuni[brojSobe-1]);
             }
             else
             {
@@ -353,7 +355,7 @@ export class Hotel
             var spaCentarCh = this.kontejner.querySelector(`input[name="spaCentar"]`);
             let spaCentarChecked = spaCentarCh.checked;
 
-            console.log(this.racuni[brojSobeRacun-1]);
+            //console.log(this.racuni[brojSobeRacun-1]);
             
             if(!this.racuni[brojSobeRacun-1])
                 alert("Izabrana soba ne postoji!");
@@ -431,6 +433,10 @@ export class Hotel
             let spa = this.racuni[brojSobeRacun-1].spaCentar;
             
 
+            //console.log(this.racuni[brojSobeRacun-1].konacnaCena);
+
+            let provera = this.racuni[brojSobeRacun-1].konacnaCena - uplataZaSobu;
+
             if(!this.racuni[brojSobeRacun-1])
                 alert("Morate prvo izabrati odgovarajucu sobu!");
             else if(this.sobe[brojSobeRacun-1].zauzeta == false)
@@ -439,6 +445,8 @@ export class Hotel
                 alert("Unesite sumu!");
             else if (this.racuni[brojSobeRacun-1].placenRacun == true)
                 alert("Racun je vec placen!");
+            else if (provera!= 0)
+                alert("Morate platiti iznos u celosti");
             else
             {
                 //this.racuni[brojSobeRacun-1].platiRacun(uplataZaSobu);

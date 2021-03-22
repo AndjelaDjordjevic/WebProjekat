@@ -99,7 +99,7 @@ export class Racun
         else
         {
             this.placenRacun = true;
-            console.log(this.placenRacun);
+            //console.log(this.placenRacun);
             this.miniKontejnerRacun.innerHTML = "Racun je placen";
         }
     }

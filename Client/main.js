@@ -11,7 +11,7 @@ document.body.appendChild(main);
 
 //Dodavanje hotela
 let kontejnerDodaj = document.createElement("div");
-kontejnerDodaj.className = "main";
+kontejnerDodaj.className = "kontUpravljanje";
 main.appendChild(kontejnerDodaj);
 
 
@@ -136,7 +136,7 @@ dugmeDodajSobeIRacune.onclick=(ev)=>{
 //Crtanje svih hotela
 
 let kontejnerCrtajSve = document.createElement("div");
-kontejnerCrtajSve.className = "main";
+kontejnerCrtajSve.className = "kontUpravljanje";
 main.appendChild(kontejnerCrtajSve);
 
 elLabela = document.createElement("h3")
@@ -178,7 +178,7 @@ dugmeCrtaj.onclick = (ev) => {
 
 //Brisanje hotela
 let kontejnerBrisanje = document.createElement("div");
-kontejnerBrisanje.className = "main";
+kontejnerBrisanje.className = "kontUpravljanje";
 main.appendChild(kontejnerBrisanje);
 
 elLabela = document.createElement("h3");
@@ -203,6 +203,11 @@ dugmeBrisanje.onclick = (ev) =>
 {
     let id = document.querySelector(".idBrisanjeHotela").value;
     console.log(id);
-    fetch("https://localhost:5001/Hotel/IzbrisiHotel?id="+id,{method:"DELETE"}).then(p=>{if(p.ok){location.reload();}});
+    fetch("https://localhost:5001/Hotel/IzbrisiHotel?id="+id,{method:"DELETE"}).then( p=> {
+        if (p.ok) 
+        {
+            location.reload();
+        }
+    });
 }
 

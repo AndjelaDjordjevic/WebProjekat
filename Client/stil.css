@@ -2,7 +2,7 @@
 {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 /* Kontejner Sobe - glavni */
@@ -71,12 +71,13 @@ hr {
     width: 120px;
     height: 100px;
     text-align: center;
-    background-color:rosybrown;
+    background-color:cadetblue;
+    /*background-color:rgba(81, 147, 212, 0.897);*/
  }
 
 body
 {
-    background-image: url("pozadina1.png");
+    background-image: url("pozadina2.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -89,19 +90,20 @@ body
     display:flex;
     flex-direction: row;
     justify-content:center;
+    flex-wrap: wrap; /* !!!!!!!! OVO SAM DODALA !!!!!!!!! */
 
 }
- .main
+ .kontUpravljanje
  {
     display:flex;
     flex-direction: column;
     background-color: white;
     border: 1px solid black;
-    border-radius:10px;
+    border-radius:15px;
     justify-content:center;
     align-items: center;
     text-align:center;
     width: 200px;
-    padding:10px;
+    padding:20px;
     margin:20px;
  }
