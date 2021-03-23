@@ -2,16 +2,13 @@
 {
     display: flex;
     flex-direction: column;
-
 }
 
 /* Kontejner Sobe - glavni */
-.kontSobe
+.kontSobe, .kontRacun
 {
     display: flex;
     flex-direction: row;
-    /*flex-grow: 1;
-    align-items: center;*/
 }
 
 .kontForma
@@ -21,14 +18,13 @@
     flex-basis: 200px;
 }
 
-.miniSobaKont /*Kontejner za svaku sobu ponaosob*/
+.miniSobaKont /*Kontejner za svaku sobu posebno*/
 {
     border: 1px solid black;
     margin: 10px;
     width: 120px;
     height: 150px;
     text-align: center;
-    text-overflow:ellipsis;
 }
 
 .kontPrikazSoba, .kontPrikazRacuna
@@ -41,11 +37,11 @@
 
 }
 
-.kontRacun
+/*.kontRacun
 {
     display: flex;
     flex-direction: row;
-}
+}*/
 
 hr {
     display: block;
@@ -90,7 +86,7 @@ body
     display:flex;
     flex-direction: row;
     justify-content:center;
-    flex-wrap: wrap; /* !!!!!!!! OVO SAM DODALA !!!!!!!!! */
+    flex-wrap: wrap; 
 
 }
  .kontUpravljanje
